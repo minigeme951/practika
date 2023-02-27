@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/where',function (){
+    return view('where');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

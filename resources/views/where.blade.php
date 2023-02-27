@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div></div>
+    <h2 class="d-flex justify-content-center">Где нас найти</h2>
+    <div class="d-flex justify-content-center">
+        <img class="w-75" src="/resources/img/map.jpg" alt="">
+    </div>
 @endsection
