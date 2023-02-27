@@ -22,5 +22,6 @@ Auth::routes();
 Route::get('/where',function (){
     return view('where');
 });
+Route::get('/catalog',[App\Http\Controllers\product::class, 'prodlist']);
 Route::get('/about',[App\Http\Controllers\about::class, 'slider']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
