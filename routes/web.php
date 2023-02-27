@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/where',function (){
+Route::get('/where', function () {
     return view('where');
 });
-Route::get('/catalog',[App\Http\Controllers\product::class, 'prodlist']);
-Route::get('/about',[App\Http\Controllers\about::class, 'slider']);
+Route::get('/catalog', [product::class, 'prodlist']);
+Route::get('/catalog/filter/{id}',[product::class, 'filterr']);
+Route::get('/catalog/sort/{name}/{sort}',[product::class,'prodlist']);
+Route::get('/about', [App\Http\Controllers\about::class, 'slider']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
