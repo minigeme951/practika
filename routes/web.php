@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/where', function () {
     return view('where');
 });
-Route::get('/catalog', [product::class, 'prodlist']);
+Route::get('/catalog', [product::class,'prodlist']);
 Route::get('/catalog/filter/{id}',[product::class, 'filterr']);
 Route::get('/catalog/sort/{name}/{sort}',[product::class,'prodlist']);
 Route::get('/about', [App\Http\Controllers\about::class, 'slider']);

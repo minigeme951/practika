@@ -13,17 +13,27 @@
                     <li><a class="dropdown-item" href="{{url('/catalog/filter')}}/{{$obcat->id}}">{{$obcat->name}}</a>
                     </li>
                 @endforeach
-                <li><a class="dropdown-item" href="{{'/Catalog'}}">сборосить фильтр</a></li>
+                <li><a class="dropdown-item" href="{{url('/catalog')}}">сборосить фильтр</a></li>
             </ul>
         </div>
         <div class="dropdown">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                Сортировка по
+                Сортировка
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
-                <li><a class="dropdown-item" href="{{url('/catalog/filter')}}/{{$obcat->id}}">{{$obcat->name}}</a>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/id/desc"/>от недавно добавленных к старым</a>
+                </li>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/id/asc"/>от старых к недавно добавленым</a>
+                </li>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/price/asc"/>от дешевых к дорогим</a>
+                </li>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/price/desc"/>от дорогих к дешевым</a>
+                </li>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/desc"/>от недавно вышедшим к старым</a>
+                </li>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/asc"/>от старых к недавно вышедшим</a>
                 </li>
                 <li><a class="dropdown-item" href="{{url('/catalog')}}">сборосить фильтр</a></li>
             </ul>
