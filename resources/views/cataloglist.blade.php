@@ -23,7 +23,8 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
-                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/id/desc"/>от недавно добавленных к старым</a>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/id/desc"/>от недавно добавленных к
+                    старым</a>
                 </li>
                 <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/id/asc"/>от старых к недавно добавленым</a>
                 </li>
@@ -31,9 +32,11 @@
                 </li>
                 <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/price/desc"/>от дорогих к дешевым</a>
                 </li>
-                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/desc"/>от недавно вышедшим к старым</a>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/desc"/>от недавно
+                    вышедшим к старым</a>
                 </li>
-                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/asc"/>от старых к недавно вышедшим</a>
+                <li><a class="dropdown-item" href="{{url('/catalog/sort')}}/year_of_production/asc"/>от старых к недавно
+                    вышедшим</a>
                 </li>
                 <li><a class="dropdown-item" href="{{url('/catalog')}}">сборосить фильтр</a></li>
             </ul>
@@ -45,12 +48,12 @@
         <div class="row">
             @foreach($prod as $obprod)
                 <div class="col-md-2">
-                    <div class="card d-flex" style="width: 18rem;">
-                        <img src="{{$obprod->img_url}}" class="card-img-top" alt="...">
+                    <div class="card h-100 d-flex" style="width: 18rem;">
+                        <img src="{{$obprod->img_url}}" class="card-img-top h-75" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$obprod->name}}</h5>
                             <p class="card-text">Цена:{{$obprod->price}}руб</p>
-                            <a href="#" class="btn btn-primary">купить</a>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
                         </div>
                     </div>
                 </div>
