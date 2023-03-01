@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('img_url');
-            $table->string('price');
+            $table->integer('price');
             $table->string('year_of_production');
             $table->string('country_of_origin');
             $table->string('category');

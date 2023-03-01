@@ -53,7 +53,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$obprod->name}}</h5>
                             <p class="card-text">Цена:{{$obprod->price}}руб</p>
-                            <a href="#" class="btn btn-primary">Подробнее</a>
+                            <a href="{{url('/catalog/product')}}/{{$obprod->id}}" class="btn btn-primary">Подробнее</a>
                         </div>
                     </div>
                 </div>
