@@ -9,7 +9,7 @@ class product extends Controller
 {
     public function prodlist($name = 'id', $sort = 'desc')
     {
-        $prod = \App\Models\product::orderby($name, $sort)->get();
+        $prod = \App\Models\product::orderby($name, $sort)->where('count','>','0')->get();
         $cat = \App\Models\category::all();
         return view('cataloglist', ['prod' => $prod,'cat'=>$cat ]);
     }
