@@ -23,8 +23,11 @@ Auth::routes();
 Route::get('/where', function () {
     return view('where');
 });
-Route::get('/catalog/product/{id}', [App\Http\Controllers\oneproduct::class, 'onelist']);
-Route::get('/catalog', [product::class, 'prodlist']);
+Route::get('/admin',[\App\Http\Controllers\adminpanel::class,'admin']);
+Route::get('/admin/product');
+Route::get('/admin/category');
+Route::get('/catalog/product/{id}',[App\Http\Controllers\oneproduct::class, 'onelist']);
+Route::get('/catalog',[product::class,'prodlist']);
 Route::get('/catalog/filter/{id}', [product::class, 'filterr']);
 Route::get('/catalog/sort/{name}/{sort}', [product::class, 'prodlist']);
 Route::get('/about', [App\Http\Controllers\about::class, 'slider']);
