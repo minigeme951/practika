@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\product;
+use App\Http\Controllers\adminpanel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,11 @@ Auth::routes();
 Route::get('/where', function () {
     return view('where');
 });
-Route::get('/admin',[\App\Http\Controllers\adminpanel::class,'admin']);
-Route::get('/admin/product');
-Route::get('/admin/category');
+Route::get('/admin',[adminpanel::class,'admin'])->name('admin');
+Route::get('/admin/product',[adminpanel::class,'prod']);
+Route::get('/admin/product/delete/{id}',[adminpanel::class,'proddel']);
+Route::get('/admin/category',[adminpanel::class,'cat']);
+Route::get('/admin/category/delete/{id}',[adminpanel::class,'catdel']);
 Route::get('/catalog/product/{id}',[App\Http\Controllers\oneproduct::class, 'onelist']);
 Route::get('/catalog',[product::class,'prodlist']);
 Route::get('/catalog/filter/{id}', [product::class, 'filterr']);

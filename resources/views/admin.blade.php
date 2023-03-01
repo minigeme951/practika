@@ -17,7 +17,7 @@
                     <!-- это кнопка отвечает за редактирования товара -->
                 </div>
                 <div class="col">
-                    <a href="" class="btn btn-danger">Удалить</a>
+                    <a href="{{url('/admin/product/delete/')}}/{{$obprod->id}}" class="btn btn-danger">Удалить</a>
                 </div> <!-- это кнопка отвечает за удаление товара из базы данных -->
 
             </div>
@@ -37,7 +37,7 @@
                     <a href="" class=" btn btn-primary">Редактировать</a>
                 </div>
                 <div class="col">
-                    <a href="" class="btn btn-danger">Удалить</a>
+                    <a href="{{url('/admin/category/delete/')}}/{{$obcat->id}}" class="btn btn-danger">Удалить</a>
                 </div>
             </div>
         @endforeach
