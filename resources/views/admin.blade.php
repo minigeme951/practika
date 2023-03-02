@@ -5,7 +5,7 @@
     <h3 class="d-flex justify-content-center">Управление товаром</h3>
     <div class="container">
         <div class="row">
-            <a href="" class="btn btn-info justify-content-center">создать товар</a>
+            <a href="{{url('/admin/product')}}" class="btn btn-info justify-content-center">создать товар</a>
         </div>
         @foreach($prod as $obprod)
             <div class="row">
@@ -26,7 +26,7 @@
     <h3 class=" d-flex justify-content-center">Упрваление категориями</h3>
     <div class="container">
         <div class="row">
-            <a href="" class="btn btn-info justify-content-center">создать категорию</a>
+            <a href="{{url('/admin/category')}}" class="btn btn-info justify-content-center">создать категорию</a>
         </div>
         @foreach($cat as $obcat)
             <div class="row">
