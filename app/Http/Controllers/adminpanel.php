@@ -35,10 +35,14 @@ class adminpanel extends Controller
 
     public function prodcreate(Request $request)
     {
+        $file =$request->file('img_url');
+        $filename= $file->getClientOriginalName();
+        $file->move(public_path('img'),$filename);
+
 
         product::create([
             'name' => $request->input('name'),
-            'img_url' => $request->input('img_url'),
+            'img_url'=>$filename,
             'price' => $request->input('price'),
             'year_of_production' => $request->input('year_of_production'),
             'country_of_origin' => $request->input('country_of_origin'),
@@ -46,6 +50,7 @@ class adminpanel extends Controller
             'model'=>$request->input('model'),
             'count'=>$request->input('category')
             ]);
+
         return redirect(route('admin'));
     }
     public function catcreate(Request $request)

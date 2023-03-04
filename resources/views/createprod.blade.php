@@ -9,7 +9,7 @@
                         <h2 class="d-flex justify-content-center">Создание товара</h2>
                     </div>
                     <div class="card-body">
-                        <form method="post"  action="{{route('createprod')}}">
+                        <form method="post"  action="{{route('createprod')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Название товара</label>
@@ -19,11 +19,11 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="img_url" class="col-md-4 col-form-label text-md-end">Ссылка на фото
+                                <label for="img_url" class="col-md-4 col-form-label text-md-end">Добавить фото
                                     товара</label>
 
                                 <div class="col-md-6">
-                                    <input class="form-control" id="img_url" type="text" name="img_url" required
+                                    <input class="form-control" id="img_url" type="file" name="img_url" required
                                            autofocus>
                                 </div>
                             </div>

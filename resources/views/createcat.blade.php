@@ -10,7 +10,7 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{route('createcat')}}">
-                            {{csrf_field()}}
+                            @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-form-label col-md-4 text-mb-end">Название категории</label>
                                 <div class="col-md-6">
