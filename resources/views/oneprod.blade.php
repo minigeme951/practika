@@ -6,7 +6,7 @@
 
             <div class="col-4">
                 @foreach($prod as $obprod)
-                    <img class="h-50" src="{{$obprod->img_url}}" alt="">
+                    <img class="h-50" src="{{url('/img')}}/{{$obprod->img_url}}" alt="">
                 @endforeach
             </div>
             <div class="col-4">
