@@ -41,15 +41,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/catalog')}}">Каталог</a>
                     </li>
-                    @guest
-                        @if(Route::has('login'))
-                        @endif
+
+                        @if(!Auth::check() || !Auth::user()->isAdmin())
+
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin')}}">админка</a>
                         </li>
+                    @endif
 
-                    @endguest
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
