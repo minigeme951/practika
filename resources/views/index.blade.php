@@ -12,7 +12,7 @@
                         @else
                             <div class="carousel-item">
                                 @endif
-                                <img src="{{$obprod->img_url}}" class="d-block    carousel-img"
+                                <img src="{{url('img')}}/{{$obprod->img_url}}" class="d-block    carousel-img"
                                      alt="...">
                                 <p class="d-flex justify-content-around">{{$obprod->name}}</p>
                             </div>

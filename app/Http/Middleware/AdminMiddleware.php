@@ -19,7 +19,7 @@ class AdminMiddleware
     {
 
         if (!Auth::check() || !Auth::user()->isAdmin()) {
-            return redirect('/')->withErrors('You do not have permission to access this page.');
+            return redirect('/error')->withErrors('You do not have permission to access this page.');
         }
         return $next($request);
     }
