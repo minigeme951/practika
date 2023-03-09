@@ -15,8 +15,18 @@
             <div class="card-body">
                 @foreach($cart_items as $item)
                 <div class="row">
-                    <div class="col">{{$item->pro->name}}</div>
+                    <div class="col">{{$item->prod->name}}</div>
                     <div class="col">{{$item->count}}</div>
+                    <div class="btn-group">
+                        <form action="{{ route('cartUpadate', $item->id) }}" method="POST">
+                            @csrf
+                            <div>
+                                <button type="submit" name="count" class="btn btn-danger" value="{{ $item->count - 1 }}">-</button>
+                                <span>{{ $item->quantity }}</span>
+                                <button type="submit" class="btn btn-success" name="count" value="{{ $item->count + 1 }}">+</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="col">
                     <a  href="{{url('cart/remove')}}/{{$item->id}}" class="btn btn-danger">Удалить</a>
                         </div>
@@ -28,25 +38,6 @@
 
 
 
-    <table>
-        <thead>
-        <tr>
-            <th>Название продукта</th>
-            <th>Цена</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
 
-    @foreach ($cart_items as $item)
-
-        <tr>
-            <td>{{ $item->pro->name }}</td>
-            <td>{{ $item->pro->price }}</td>
-            <td><a  href="{{url('cart/remove')}}/{{$item->id}}">Удалить</a></td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
 
 @endsection
