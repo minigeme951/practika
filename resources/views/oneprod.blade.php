@@ -13,10 +13,14 @@
                 @foreach($prod as $obprod)
                     <h2>{{$obprod->name}}</h2>
                     <h2>Цена: {{$obprod->price}}рублей.</h2>
+                    @if (auth()->check())
                     @if($obprod->count>0)
-                        <a href="" class="btn btn-primary">В карзину</a>
+                        <a href="{{Route('cartAdd', $obprod->id) }}" class="btn btn-primary">Добавить в корзину</a>
                     @else
                         <a class="btn btn-primary disabled" href="">НЕТ В НАЛИЧИИ</a>
+                    @endif
+                    @else
+                        <a href="{{url('/login')}}"class="btn btn-info">Авторизируйтесь</a>
                     @endif
                 @endforeach
                 <h3>Характеристики</h3>

@@ -44,3 +44,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/error', function () {
     return view('Error');
 });
+//Ссылки карзины которые доступны только для авторизированных пользователей
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cart', [App\Http\Controllers\cartcontroller::class, 'index'])->name('cartIndex');
+    Route::get('/cart/add/{product_id}', [App\Http\Controllers\cartcontroller::class, 'add'])->name('cartAdd');
+    Route::get('/cart/remove/{id}', [App\Http\Controllers\cartcontroller::class, 'remove'])->name('cartRemove');
+});
