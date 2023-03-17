@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
     <h2 class="d-flex justify-content-center">О нас</h2>
     <h3 class="d-flex justify-content-center">Дивиз компании</h3>
     <h2 class="d-flex justify-content-center">Наши новинки</h2>
@@ -30,5 +31,5 @@
                         <span class="visually-hidden">Следующий</span>
                     </button>
         </div>
-
+    </div>
 @endsection

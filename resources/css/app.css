@@ -1,0 +1,72 @@
+body{
+    background-color: rgba(0, 0, 0, 0.842);
+}
+
+.carus-img
+{
+    height: 300px;
+    border-radius: 10px;
+}
+
+.teet
+{
+    font-size: 20px;
+}
+
+.teest
+{
+    font-size: 30px;
+}
+
+
+
+.oo {
+    width: 300px;
+    height: 300px;
+
+}
+
+
+
+
+
+
+
+.carl
+{
+    width: 600px;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+
+    flex: 0 0 auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+
+main {
+
+    flex: 1 0 auto;
+}
+
+footer {
+
+    flex: 0 0 auto;
+
+}
+
+.whe
+{
+    border-radius: 100px;
+}
+

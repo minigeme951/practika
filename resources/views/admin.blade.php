@@ -13,7 +13,7 @@
                     <h3>{{$obprod->name}}</h3>  <!-- тут назавние товара выводится из базы данных-->
                 </div>
                 <div class="col">
-                    <a href="{{url('/admin/product/edit')}}/{{$obprod->id}}" class="btn btn-primary ">Редактировать</a>
+                    <a href="{{route('productedit',$obprod->id)}}" class="btn btn-primary ">Редактировать</a>
                     <!-- это кнопка отвечает за редактирования товара -->
                 </div>
                 <div class="col">
@@ -34,7 +34,7 @@
                     <h3>{{$obcat->name}}</h3>
                 </div>
                 <div class="col">
-                    <a href="{{url('/admin/category/edit')}}{{$obcat->id}}" class=" btn btn-primary">Редактировать</a>
+                    <a href="{{route('catedit',$obcat->id)}}" class=" btn btn-primary">Редактировать</a>
                 </div>
                 <div class="col">
                     <a href="{{url('/admin/category/delete/')}}/{{$obcat->id}}" class="btn btn-danger">Удалить</a>

@@ -6,7 +6,7 @@
 
             <div class="col-4">
                 @foreach($prod as $obprod)
-                    <img class="h-50" src="{{url('/img')}}/{{$obprod->img_url}}" alt="">
+                    <img class="h-100 w-100" src="{{url('/img')}}/{{$obprod->img_url}}" alt="">
                 @endforeach
             </div>
             <div class="col-4">
@@ -24,9 +24,9 @@
                     @endif
                 @endforeach
                 <h3>Характеристики</h3>
-                <p>Дата производства: {{$obprod->year_of_production}}</p>
-                <p>Страна производитель: {{$obprod->country_of_origin}}</p>
-                <p>Модель:{{$obprod->model}}</p>
+                <h4>Дата производства: {{$obprod->year_of_production}}</h4>
+                <h4>Страна производитель: {{$obprod->country_of_origin}}</h4>
+                <h4>Модель:{{$obprod->model}}</h4>
                 @if($obprod->count>0)
                     <p>В наличии: {{$obprod->count}}</p>
                 @else
