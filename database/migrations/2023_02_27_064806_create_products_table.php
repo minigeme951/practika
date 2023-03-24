@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->string('country_of_origin');
             $table->string('category');
             $table->string('model');
-            $table->string('count');
+            $table->integer('count');
             $table->timestamps();
         });
     }

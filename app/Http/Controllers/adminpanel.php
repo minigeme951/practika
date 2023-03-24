@@ -91,15 +91,20 @@ class adminpanel extends Controller
     public function catdel($id)
     {
         category::where('id', $id)->delete();
+        product::where('category', $id)->delete();
         return redirect(route('admin'));
     }
-    public function catedit($id){
-        $cat = category::where('id',$id)->get();
-        return view('editcat',['cat'=>$cat]);
+
+    public function catedit($id)
+    {
+        $cat = category::where('id', $id)->get();
+        return view('editcat', ['cat' => $cat]);
     }
-    public function catupdate(Request $request, $id){
-        $cat= category::find($id);
-        $cat->name= $request->input('name');
+
+    public function catupdate(Request $request, $id)
+    {
+        $cat = category::find($id);
+        $cat->name = $request->input('name');
         $cat->save();
         return redirect(route('admin'));
     }

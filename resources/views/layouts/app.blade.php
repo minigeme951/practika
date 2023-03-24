@@ -42,7 +42,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/catalog')}}">Каталог</a>
                     </li>
-
                     @if(!Auth::check() || !Auth::user()->isAdmin())
 
                     @else
@@ -50,6 +49,7 @@
                             <a class="nav-link" href="{{url('/admin')}}">админка</a>
                         </li>
                     @endif
+
 
 
                 </ul>
