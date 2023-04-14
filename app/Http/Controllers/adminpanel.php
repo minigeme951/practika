@@ -72,7 +72,7 @@ class adminpanel extends Controller
             'country_of_origin' => $request->input('country_of_origin'),
             'category' => $request->input('category'),
             'model' => $request->input('model'),
-            'count' => $request->input('category')
+            'count' => $request->input('count')
         ]);
 
         return redirect(route('admin'));

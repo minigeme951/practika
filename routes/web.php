@@ -45,6 +45,7 @@ Route::get('/catalog', [product::class, 'prodlist']);
 Route::get('/catalog/filter/{id}', [product::class, 'filterr']);
 Route::get('/catalog/sort/{name}/{sort}', [product::class, 'prodlist']);
 Route::get('/', [App\Http\Controllers\about::class, 'slider']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/error', function () {
     return view('Error');//Вывод страницы ошибки
@@ -55,5 +56,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart/add/{product_id}', [App\Http\Controllers\cartcontroller::class, 'add'])->name('cartAdd');
     Route::get('/cart/remove/{id}', [App\Http\Controllers\cartcontroller::class, 'remove'])->name('cartRemove');
     Route::post('cart/update/{id}',[App\Http\Controllers\cartcontroller::class,'update'])->name('cartUpadate');
-
 });
