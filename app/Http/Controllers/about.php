@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\App;
 
 class about extends Controller
 {
-    public function slider(){
-        $s= \App\Models\product::Orderby("id","desc")-> limit(5)->get();
-    return view('index',['prod'=>$s]);
+    public function slider()
+    {
+        $s = \App\Models\product::Orderby("id", "desc")->limit(5)->get();
+        return view('index', ['prod' => $s]);
     }
 }

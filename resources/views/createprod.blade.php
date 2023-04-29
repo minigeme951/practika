@@ -9,7 +9,7 @@
                         <h2 class="d-flex justify-content-center">Создание товара</h2>
                     </div>
                     <div class="card-body">
-                        <form method="post"  action="{{route('createprod')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('createprod')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">Название товара</label>
@@ -49,7 +49,7 @@
 
                                 <div class="col-md-6">
                                     <input class="form-control" id="country_of_origin" type="text"
-                                           name="country_of_origin" required autofocus >
+                                           name="country_of_origin" required autofocus>
                                 </div>
                             </div>
                             <div class="row mb-3">

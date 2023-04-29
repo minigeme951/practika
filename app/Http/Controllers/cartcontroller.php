@@ -16,7 +16,7 @@ class cartcontroller extends Controller
         $cart_items = cart::where('user_id', $user_id)->get();
 
 
-        return view('cart', compact('cart_items'));
+        return view('cart', ['cart_items' => $cart_items]);
     }
 
     public function add($product_id)
@@ -24,21 +24,25 @@ class cartcontroller extends Controller
         $user_id = auth()->id();
         $cart_item = cart::where('user_id', $user_id)
             ->where('product_id', $product_id)
-            ->first();
-
+            ->first();// поиск товара в базе данных
+//если товар есть в базе данных добавить количество +1 только с тем услвием что зачение не больше чем в продуктах
         if ($cart_item) {
-            // If the product is already in the cart, increment its quantity
+            $product = Product::find($cart_item->product_id);
             $cart_item->count++;
-            $cart_item->save();
-        } else {
-            // If the product is not in the cart, create a new cart item
+            if ($cart_item->count > $product->count) {// Если количество больше выполнить переадресацию на страницу каталог
+                return redirect()->back()->with('error','Вы не можете добавит в карзину товар т.к в вашей корзине находится максимальное количество товара');
+            } else
+            {
+                $cart_item->save();
+            }
+        } else
+        {
+            //Если товара нет в корзине выполнить его создание
             cart::create([
                 'user_id' => $user_id,
                 'product_id' => $product_id,
             ]);
         }
-
-
         return redirect()->route('cartIndex');
     }
 
@@ -49,7 +53,7 @@ class cartcontroller extends Controller
             ->firstOrFail();
         $product = Product::find($cart_item->product_id);
         if ($request->input('count') > $product->count) {
-            return redirect()->back()->with('error', 'Sorry, there are only ' . $product->count . ' units of this product available.');
+            return redirect()->back();
         }
         if ($request->input('count') > 0) {
             $cart_item->count = $request->input('count');
@@ -57,10 +61,9 @@ class cartcontroller extends Controller
         } else {
             $cart_item->delete();
         }
-            return redirect()->route('cartIndex');
+
+        return redirect()->route('cartIndex');
     }
-
-
 
     public function remove($id)
     {

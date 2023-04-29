@@ -18,4 +18,6 @@ class product extends Model
         'model',
         'count'
     ];
+
+
 }
