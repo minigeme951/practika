@@ -56,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart', [App\Http\Controllers\cartcontroller::class, 'index'])->name('cartIndex');
     Route::get('/cart/add/{product_id}', [App\Http\Controllers\cartcontroller::class, 'add'])->name('cartAdd');
     Route::get('/cart/remove/{id}', [App\Http\Controllers\cartcontroller::class, 'remove'])->name('cartRemove');
-    Route::post('cart/update/{id}', [App\Http\Controllers\cartcontroller::class, 'update'])->name('cartUpadate');
+    Route::post('cart/update/{id}',[App\Http\Controllers\cartcontroller::class,'update'])->name('cartUpadate');
 });
 //Ссылки функций заказов
 Route::get('/order',[order::class,'index'])->name('Order.Index');
